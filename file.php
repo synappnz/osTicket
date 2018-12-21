@@ -19,6 +19,7 @@ require_once(INCLUDE_DIR.'class.file.php');
 
 //Basic checks
 if (!$_GET['key']
+    || is_array($_GET['key'])
     || !$_GET['signature']
     || !$_GET['expires']
     || !($file = AttachmentFile::lookupByHash($_GET['key']))
